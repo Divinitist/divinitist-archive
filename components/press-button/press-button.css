@@ -1,0 +1,23 @@
+.component-press-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2em;
+
+    font-size: inherit;
+    font-family: inherit;
+
+    background-color: var(--theme-color);
+    border: none;
+    border-radius: 0.2em;
+    border-right: 0.2em solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0.2em solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: aliceblue;
+    box-shadow: 0.15em 0.15em 0.15em rgba(0, 0, 0, 0.2);
+}
+
+.component-press-button:active{
+    box-shadow: 0.15em 0.15em 0.15em rgba(0, 0, 0, 0.3);
+}

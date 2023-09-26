@@ -1,0 +1,61 @@
+.component-popup-window-container {
+    display: flex;
+    position: absolute;
+    z-index: 999; /*与position: absolute配合使用*/
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    backdrop-filter: blur(5px);
+}
+.component-popup-window{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 15em;
+    height: 9em;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-size: contain;
+    backdrop-filter: blur(5px);
+
+    color: var(--main-text-color);
+    box-shadow: 0.15em 0.15em 0.15em rgba(0, 0, 0, 0.2);
+}
+.component-popup-window-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: inherit;
+    position: absolute;
+    top: 0;
+    
+    width: 100%;
+    height: 2.3em;
+    background-color: var(--theme-color);
+}
+.component-popup-window-title {
+    display: flex;
+    z-index: inherit;
+
+    font-size: 1.2em;
+}
+.component-popup-window-message {
+    display: flex;
+    z-index: inherit;
+    
+    margin: 1em;
+
+    font-size: 1em;
+    color: var(--main-text-color);
+}
+.component-popup-window-button {
+    display: flex;
+    z-index: inherit;
+    position: absolute;
+    bottom: 0.7em;
+
+    width: 60%;
+}

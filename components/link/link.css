@@ -1,0 +1,7 @@
+.component-link {
+    color: var(--theme-color);
+}
+
+.component-link:hover {
+    cursor: pointer;
+}

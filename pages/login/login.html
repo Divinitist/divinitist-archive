@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Divinitist" />
+        <link rel="icon" href="../../assets/images/S.ico" type="image/x-icon" />
+        <title>登录 - 云上星辰</title>
+        <link rel="stylesheet" href="../../assets/css/common.css" />
+        <link rel="stylesheet" href="../../assets/css/login.css" />
+    </head>
+    <body>
+        <div class="login-panel-container">
+            <div class="login-panel">
+                <div class="login-panel-sideblock">
+                    <p class="login-panel-sideblock-word"><i>Au millieu des nuages</i></p>
+                    <p class="login-panel-sideblock-word"><i>j'imagine ton regard</i></p>
+                    <p class="login-panel-sideblock-word"><i>Cette fois ne m'en veux pas</i></p>
+                    <p class="login-panel-sideblock-word"><i>si j'arrive en retard</i></p>
+                </div>
+                <div class="login-panel-interface-container">
+                    <div class="login-panel-title-container">
+                        <div class="login-panel-title"></div>
+                    </div>
+                    <div class="login-panel-input-container">
+                        <div class="login-panel-input-username-container">
+                            <input class="login-panel-input-username component-input" type="text"
+                                    name="username" maxlength="20" value="输入账号" autocomplete="off">
+                        </div>
+                        <div class="login-panel-input-password-container">
+                            <input class="login-panel-input-password component-input" type="text"
+                                    name="password" maxlength="20" value="输入密码">
+                        </div>
+                        <div class="login-panel-input-confirm-password-container">
+                            <input class="login-panel-input-confirm-password component-input" type="text"
+                                    name="password" maxlength="20" value="确认密码">
+                        </div>
+                    </div>
+                    <div class="login-panel-button-container">
+                        <button class="login-panel-button-login component-press-button" type="button" 
+                            onclick="login()">登录</button>
+                        <button class="login-panel-button-signup component-press-button" type="button" 
+                            onclick="signup()">注册</button>
+                    </div>
+                    <div class="login-panel-tip-container">
+                        <div class="login-panel-tip-signup-container">
+                            尚无账号?
+                            <a class="login-panel-tip-signup component-link" onclick="setSignupWindow()">点此注册</a>
+                        </div>
+                        <div class="login-panel-tip-login-container">
+                            已有账号?
+                            <a class="login-panel-tip-login component-link" onclick="setLoginWindow()">点此登录</a>
+                        </div>
+                        <div class="login-panel-tip-forget-container">
+                            忘记密码?
+                            <a class="login-panel-tip-forget component-link" onclick="findPassword()">点此找回</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../assets/js/common.js"></script>
+        <script src="../../utils/load.js"></script>
+        <script src="../../utils/class.js"></script>
+        <script src="../../assets/js/login.js"></script>
+    </body>
+</html>

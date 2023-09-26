@@ -1,0 +1,131 @@
+/** {
+    border: 1px solid black;
+}*/
+
+.component-navigator-container {
+    position: fixed;
+    top: 0;
+    z-index: 998;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.component-navigator {
+    margin: 0;
+    padding: 0;
+}
+
+.component-navigator-icon {
+    width: 9vw;
+    height: 80%;
+    position: absolute;
+    left: 13%;
+}
+
+.component-navigator-general-item-container {
+    width: 60%;
+    height: 100%;
+}
+
+.component-navigator-item-container {
+    flex: 1;
+
+    height: 100%;
+    margin: 0;
+    
+}
+
+.component-navigator-item {
+
+    height: 100%;
+    width: 100%;
+
+    margin: 10%;
+
+    transition: border 0.15s;
+}
+
+.component-navigator-item:hover {
+    
+    border-bottom: 0.35rem solid var(--theme-color);
+}
+
+.component-navigator-item:active {
+    border: none;
+}
+
+.component-navigator-user {
+
+    height: 3.2rem;
+    width: 3.2rem;
+    position: absolute;
+    right: 16%;
+    border-radius: 50%;
+    border: 0.2rem solid var(--theme-color);
+    background-image: url('../../assets/images/Cinder.ico');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.component-navigator-user-panel-container {
+    flex-direction: column;
+
+    width: 15rem;
+    height: 13rem;
+    position: absolute;
+    right: 16%;
+    top: 0;
+    z-index: 999;
+}
+
+@keyframes appear-still {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.component-navigator-user-panel {
+    flex-direction: column;
+
+    width: 100%;
+    height: 8rem;
+    position: absolute;
+    bottom: 0;
+
+    border-radius: 0.5rem;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+    animation: appear-still 0.25s;
+    backdrop-filter: blur(5px);
+
+    transition: all 0.25s;
+}
+
+.component-navigator-user-panel.removed {
+    opacity: 0;
+}
+
+.component-navigator-user-info {
+
+    width: 90%;
+    height: 40%;
+    margin-top: 0;
+    margin-bottom: 5%;
+
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), #bbbbbb, rgba(255, 255, 255, 0.2)) 1;
+}
+
+.component-navigator-user-logout-button {
+    width: 90%;
+    height: 2.2rem;
+}

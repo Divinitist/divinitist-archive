@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Divinitist" />
+        <link rel="icon" href="../../assets/images/S.ico" type="image/x-icon" />
+        <title>主页 - 云上星辰</title>
+        <link rel="stylesheet" href="../../assets/css/common.css" />
+        <link rel="stylesheet" href="../../assets/css/main.css" />
+    </head>
+    <body>
+        <!--
+            navigator组件特性：
+            1. 悬停立体上升
+            2. 同组nav-item只能单选，且被选项发生变化
+            3. 整个nav不跟随滚动
+            4. 跟屏缩放
+        -->
+        <div class="top-navigator-container component-navigator-container">
+            <div class="top-navigator component-navigator">
+                <div class="top-navigator-icon component-navigator-icon"></div>
+                <div class="top-navigator-general-item-container component-navigator-general-item-container">
+                    <div class="top-navigator-main-container component-navigator-item-container">
+                        <div class="top-navigator-main component-navigator-item">主页</div>
+                    </div>
+                    <div class="top-navigator-game-container component-navigator-item-container">
+                        <div class="top-navigator-game component-navigator-item">游戏</div>
+                    </div>
+                    <div class="top-navigator-note-container component-navigator-item-container">
+                        <div class="top-navigator-note component-navigator-item">笔记</div>
+                    </div>
+                </div>
+                <div class="top-navigator-user component-navigator-user" onmouseenter="showUserInfo()"></div>
+            </div>
+        </div>
+        <!--
+            sidebar让对应的note自己添加，note向mockapi申请
+        -->
+        <div class="main-content-container">
+            <div class="main-content">
+                <div class="main-content-swiper-container">
+                    <div class="main-content-swiper">
+                    </div>
+                </div>
+                <div class="main-content-self-introduction-container">
+                    <div class="main-content-self-introduction">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../assets/js/common.js"></script>
+        <script src="../../utils/load.js"></script>
+        <script src="../../utils/class.js"></script>
+        <script src="../../assets/js/main.js"></script>
+    </body>
+</html>

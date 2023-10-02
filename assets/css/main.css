@@ -1,6 +1,6 @@
 .top-navigator-container {
     width: 100%;
-    height: 4rem;
+    height: 4.2rem;
 }
 
 .top-navigator {
@@ -8,7 +8,11 @@
     width: 70%;
     height: 100%;
 
-    font-size: 1.5rem;
+    font-size: min(3vw, 3vh);
+}
+
+.top-navigator-general-item-container {
+    color: var(--sub-text-color);
 }
 
 .top-navigator-icon {
@@ -18,4 +22,88 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.main-content {
+    flex-direction: column;
+}
+
+.main-content-part1 {
+    flex-direction: column;
+}
+
+.main-content-swiper {
+    perspective: 1600px;
+    flex-direction: row;
+}
+
+.swiper-container {
+    perspective: 1600px;
+    z-index: 2;
+}
+
+.swiper-image {
+    transform-style: preserve-3d;
+    height: 22.5vw;
+    width: 40vw;
+    /*
+    height: 11.25vw;
+    width: 20vw;
+    */
+    /*position: relative;*/ /*不absolute会使得图片的初始位置不在原点*/
+    position: absolute;
+    /*border: 1px solid black;*/
+    background-size: cover;
+    transition: transform 0.4s ease-in-out;
+    /*transition: all 1s ease-in-out;*/
+}
+
+.swiper-button {
+    position: absolute;
+    z-index: 888;
+    width: 4vw;
+    height: 22.5vw;
+    font-size: 2.5vw;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    border: none;
+    color: white;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+}
+
+.swiper-button:hover {
+    text-shadow: 0.3vw 0.3vw 0.3vw rgba(0, 0, 0, 0.5);
+}
+.swiper-button:active {
+    text-shadow: 0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.5);
+}
+
+.swiper-dot-container {
+    flex-direction: row;
+    position: relative;
+    top: 16vw;
+    z-index: 999;
+}
+
+.swiper-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px solid white;
+    margin: 3px;
+    transition: all 0.3s;
+}
+
+.swiper-dot.ondisplay {
+    background-color: white;
+}
+
+.swiper-dot:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-dot:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }

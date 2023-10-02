@@ -11,9 +11,9 @@ function setLoginWindow() {
     setClassByName('login-panel-tip-signup-container', 'flex');
     setClassByName('login-panel-tip-login-container', 'none');
     setClassByName('login-panel-tip-forget-container', 'flex');
-    username.blur(0);
-    password.blur(0);
-    confirmPassword.blur(0);
+    username.onblur(0);
+    password.onblur(0);
+    confirmPassword.onblur(0);
     var tipContainer = Array.from(document.getElementsByClassName('login-panel-tip-container'))[0];
     tipContainer.style.flex = '1.5';
 }
@@ -28,9 +28,9 @@ function setSignupWindow() {
     setClassByName('login-panel-tip-login-container', 'flex');
     setClassByName('login-panel-tip-forget-container', 'none');
     var tipContainer = Array.from(document.getElementsByClassName('login-panel-tip-container'))[0];
-    username.blur(0);
-    password.blur(0);
-    confirmPassword.blur(0);
+    username.onblur(0); // NO EFFECT!!
+    password.onblur(0);
+    confirmPassword.onblur(0);
     tipContainer.style.flex = '0.5';
 }
 
@@ -53,6 +53,7 @@ function login() {
         return;
     }
     window.localStorage.setItem('current-logging-on-user', username.value); // 名字超过20个字符，不可能是用户名
+    window.localStorage.setItem('current-selected-item-offset', 0); // 设定先在导航栏选取主页
     window.location.href = '../../pages/main/main.html';
 }
 

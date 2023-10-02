@@ -30,7 +30,7 @@
                         <div class="top-navigator-note component-navigator-item">笔记</div>
                     </div>
                 </div>
-                <div class="top-navigator-user component-navigator-user" onmouseenter="showUserInfo()"></div>
+                <div class="top-navigator-user component-navigator-user"></div>
             </div>
         </div>
         <!--
@@ -38,13 +38,18 @@
         -->
         <div class="main-content-container">
             <div class="main-content">
-                <div class="main-content-swiper-container">
-                    <div class="main-content-swiper">
+                <div class="main-content-part1 component-swiper-container">
+                    <div class="main-content-swiper component-swiper">
+                        <div class="swiper-image" id="top-img"></div>
+                        <div class="swiper-image" id="front-img"></div>
+                        <div class="swiper-image" id="bottom-img"></div>
+                        <div class="swiper-image" id="back-img"></div>
+                        <div class="swiper-image" id="left-img"></div>
+                        <div class="swiper-image" id="right-img"></div>
+                        <button class="swiper-button" id="left-btn">《</button>
+                        <button class="swiper-button" id="right-btn">》</button>
                     </div>
-                </div>
-                <div class="main-content-self-introduction-container">
-                    <div class="main-content-self-introduction">
-                    </div>
+                    <div class="swiper-dot-container" id="swiper-dot-container"></div>
                 </div>
             </div>
         </div>

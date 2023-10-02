@@ -2,18 +2,24 @@
     --main-text-color: black;
     --sub-text-color: grey;
     --theme-color: black;
+    --background-color: rgba(255, 255, 255, 1);
 }
+
+html {
+    font-size: 2vh;
+}
+
 
 head, script {
     display: none;
 }
 
-@keyframes sky-move-left {
+@keyframes sky-move-right {
     0%{
         background-position: bottom left;
     }
     100%{
-        background-position: bottom right;
+        background-position: 50% 100%;
     }
 }
 
@@ -38,5 +44,6 @@ body {
     background-image: url("../images/sky.jpg");
     background-size: 250%;
     background-position: bottom left;
-    animation: sky-move-left 300s normal infinite;
+    animation: sky-move-right 250s normal infinite;
+    /*filter: saturate(75%);*/
 }

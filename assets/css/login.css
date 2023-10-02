@@ -15,7 +15,7 @@
     position: relative;
     z-index: 1;
 
-    animation: appear 1.5s;
+    animation: appear 1s;
 }
 
 .login-panel {
@@ -23,8 +23,9 @@
 
     width: 35em;
     height: 18em;
+    border-radius: 0.3rem;
 
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--background-color);
     box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
 }
 
@@ -32,6 +33,9 @@
     flex-direction: column;
     flex: 4;
     height: 100%;
+    
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
 
     /*background-color: var(--theme-color);*/
     background-image: url('../images/sky-hole.jpg');
@@ -101,7 +105,7 @@
 .login-panel-input-confirm-password-container {
     width: 100%;
     margin-bottom: 5%;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-family: consolas, 华文中宋;
 }
 
@@ -114,7 +118,7 @@
     flex-direction: column;
     margin: 5%;
 
-    font-size: 0.8em;
+    font-size: 1rem;
 }
 
 .login-panel-tip-signup-container,

@@ -12,6 +12,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: space-between;
 }
 
 p {
@@ -23,6 +24,23 @@ p {
 
 h1 {
     text-align: center;
+    margin: 0.3em;
+    padding: 0;
+}
+
+ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
+}
+
+li {
+    list-style-type: disc;
+    text-indent: 3em;
+}
+
+#inscription {
+    margin-left: auto;
 }

@@ -6,6 +6,7 @@ function getContentFromUrl(url, areaName) {
             var response = JSON.parse(xhr.responseText);
             var readingArea1 = document.getElementById(areaName);
             readingArea1.innerHTML = response[0]['text'];
+            console.log(response);
         }
     }
     xhr.send();

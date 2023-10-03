@@ -44,6 +44,7 @@ body {
     background-image: url("../images/sky.jpg");
     background-size: 250%;
     background-position: bottom left;
+    background-attachment: fixed;
     animation: sky-move-right 250s normal infinite;
     /*filter: saturate(75%);*/
 }

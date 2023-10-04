@@ -74,9 +74,9 @@ for(let i = 0; i < brickRow; ++i) {
     }
 }
 
-function placeBricks(extmargin) {
-    brickWidth = (canvasWidth - 2 * extmargin + margin) / brickCol - margin;
-    brickHeight = (canvasHeight / 2 - 2 * extmargin + margin) / brickRow - margin;
+function placeBricks() {
+    brickWidth = (canvasWidth - 2 * extMargin + margin) / brickCol - margin;
+    brickHeight = (canvasHeight / 2 - 2 * extMargin + margin) / brickRow - margin;
     // console.log(brickWidth, brickHeight);
     ctx.fillStyle = themeColor;
     for(let i = 0; i < brickCol; ++i) {
@@ -84,14 +84,16 @@ function placeBricks(extmargin) {
             if(brickExist[j][i] == false) {
                 continue;
             }
-            brickTop[j][i] = extmargin + (margin + brickHeight) * j;
-            brickBottom[j][i] = extmargin + (margin + brickHeight) * j + brickHeight;
-            brickLeft[j][i] = extmargin + (margin + brickWidth) * i;
-            brickRight[j][i] = extmargin + (margin + brickWidth) * i + brickWidth;
+            brickTop[j][i] = extMargin + (margin + brickHeight) * j;
+            brickBottom[j][i] = extMargin + (margin + brickHeight) * j + brickHeight;
+            brickLeft[j][i] = extMargin + (margin + brickWidth) * i;
+            brickRight[j][i] = extMargin + (margin + brickWidth) * i + brickWidth;
             ctx.fillRect(brickLeft[j][i], brickTop[j][i], brickWidth, brickHeight);
         }
     }
 }
+
+var extMargin = 40;
 
 function clearBall(x, y, r) {
     ctx.fillStyle = ctx.strokeStyle = 'white';
@@ -99,8 +101,9 @@ function clearBall(x, y, r) {
     ctx.arc(x, y, r + 1, 0, 2 * Math.PI, false);
     // 额外加一个像素才能完全擦掉之前的球？
     ctx.closePath();
-    ctx.stroke();
     ctx.fill();
+    placeBricks();
+    ctx.fillRect(boardX, boardY, brickWidth, margin);
 }
 
 function drawBall(x, y, r) {
@@ -127,30 +130,13 @@ var positionY;
 var velocityX;
 var velocityY;
 var gamePID;
-var health = 3;
 
-function showYouLose() {
+function showTip(tip, offset) {
     ctx.fillStyle = themeColor;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     ctx.font = '114px Old English Text MT';
     ctx.fillStyle = 'white';
-    ctx.fillText('You Lose', canvasWidth / 2 - 228, canvasHeight / 2 + 40);
-}
-
-function showYouWin() {
-    ctx.fillStyle = themeColor;
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-    ctx.font = '114px Old English Text MT';
-    ctx.fillStyle = 'white';
-    ctx.fillText('You Win', canvasWidth / 2 - 223, canvasHeight / 2 + 40);
-}
-
-function showGameEnd() {
-    ctx.fillStyle = themeColor;
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-    ctx.font = '114px Old English Text MT';
-    ctx.fillStyle = 'white';
-    ctx.fillText('Game End', canvasWidth / 2 - 250, canvasHeight / 2 + 40);
+    ctx.fillText(tip, canvasWidth / 2 - offset, canvasHeight / 2 + 40);
 }
 
 var boardX;
@@ -211,7 +197,7 @@ function placeBall(x, y, r, vx, vy) {
         if(positionY - r >= canvasHeight) {
             clearInterval(gamePID);
             clearInterval(boardPID);
-            showYouLose();
+            showTip('You Lose', 228);
             startBtn.textContent = '再试一次';
             placeButtonsByGameStatus(GameStatus.End);
             return;
@@ -270,13 +256,13 @@ function placeBall(x, y, r, vx, vy) {
         xReverse = false;
         yReverse = false;
 
-        if(judgeIntersect(x0, y0, x1 - 2, y1, y2, r)) { // left
+        if(judgeIntersect(x0, y0, x1, y1, y2, r) && x0 < x1) { // left
             xReverse = true;
         }
-        if(judgeIntersect(x0, y0, x2 + 2, y1, y2, r)) { // right
+        if(judgeIntersect(x0, y0, x2, y1, y2, r) && x2 < x0) { // right
             xReverse = true;
         }
-        if(judgeIntersect(y0, x0, y1 - 2, x1, x2, r)) { // top
+        if(judgeIntersect(y0, x0, y1, x1, x2, r) && y0 < y1) { // top
             yReverse = true;
         }/*
         if(judgeIntersect(y0, x0, y2, x1, x2, r)) { // bottom
@@ -292,7 +278,7 @@ function placeBall(x, y, r, vx, vy) {
         if(brickCounter == brickCol * brickRow) {
             clearInterval(gamePID);
             clearInterval(boardPID);
-            showYouWin();
+            showTip('You Win', 223);
             startBtn.textContent = '再来一局';
             placeButtonsByGameStatus(GameStatus.End);
             return;
@@ -300,35 +286,52 @@ function placeBall(x, y, r, vx, vy) {
     }, 10);
 }
 
-canvas.addEventListener('mousemove', function(event) {
+window.addEventListener('mousemove', function(event) {
     var rect = canvas.getBoundingClientRect();
     mouseX = event.clientX - rect.left;
     //console.log(x, y);
 });
 
 placeButtonsByGameStatus(GameStatus.NotStart);
+showTip('Welcome', 200);
 
 
 startBtn.addEventListener('click', function() {
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     for(let i = 0; i < brickCol; ++i) {
         for(let j = 0; j < brickRow; ++j) {
             brickExist[j][i] = true;
         }
     }
-    placeBricks(40);
-    placeBoard(margin);
 
-    var vx = (Math.random() - 0.5) * 400 * Math.sqrt(2);
-    placeBall(canvasWidth / 2, canvasHeight - 9, margin, vx, -Math.sqrt(80000 - vx * vx));
-    placeButtonsByGameStatus(GameStatus.Running);
-    startBtn.textContent = '开始游戏';
+    showTip('3', 30);
+    setTimeout(() => {
+        showTip('2', 30);
+    }, 1000);
+
+    setTimeout(() => {
+        showTip('1', 30);
+    }, 2000);
+
+    setTimeout(() => {
+        showTip('Go', 70);
+    }, 3000);
+    
+    setTimeout(() => {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        placeBricks();
+
+        var vx = (Math.random() - 0.5) * 400 * Math.sqrt(2);
+        placeBall(canvasWidth / 2, canvasHeight - 3 * margin - 1, margin, vx, -Math.sqrt(80000 - vx * vx));
+        placeButtonsByGameStatus(GameStatus.Running);
+        placeBoard(canvasWidth / 2);
+        startBtn.textContent = '开始游戏';
+    }, 4000);
 });
 
 endBtn.addEventListener('click', function() {
     clearInterval(gamePID);
     clearInterval(boardPID);
-    showGameEnd();
+    showTip('Game End', 250);
     startBtn.textContent = '重新开始';
     placeButtonsByGameStatus(GameStatus.NotStart);
 });

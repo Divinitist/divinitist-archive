@@ -302,7 +302,8 @@ startBtn.addEventListener('click', function() {
             brickExist[j][i] = true;
         }
     }
-
+    startBtn.disabled = true;
+    startBtn.style.display = 'none';
     showTip('3', 30);
     setTimeout(() => {
         showTip('2', 30);
@@ -325,6 +326,7 @@ startBtn.addEventListener('click', function() {
         placeButtonsByGameStatus(GameStatus.Running);
         placeBoard(canvasWidth / 2);
         startBtn.textContent = '开始游戏';
+        startBtn.disabled = false;
     }, 4000);
 });
 

@@ -24,4 +24,31 @@ for(const i in items) {
     });
 }
 
-selectItem(items[parseInt(window.localStorage.getItem('current-selected-item-offset'))]);
+var itemContents = [];
+var itemsContainer = document.getElementById('items-container');
+
+for(const i in items) {
+    var itemContent = document.getElementById(`item-${i}-content`);
+    itemContents.push(itemContent);
+}
+
+for(const i in items) {
+    items[i].addEventListener('click', function() {
+        for(const j in items) {
+            if(itemContents[j] == null) {
+                continue;
+            }
+            if(i == j) {
+                itemsContainer.appendChild(itemContents[j]);
+            }
+            else{
+                itemContents[j].remove();
+            }
+        }
+    });
+}
+
+window.addEventListener('load', function() {
+    items[parseInt(window.localStorage.getItem('current-selected-item-offset'))].dispatchEvent(new Event('click'));
+    // onclick和eventlistner是两个体系！
+})

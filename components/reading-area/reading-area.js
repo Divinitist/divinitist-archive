@@ -6,10 +6,11 @@ function getContentFromUrl(url, areaName) {
             var response = JSON.parse(xhr.responseText);
             var readingArea1 = document.getElementById(areaName);
             readingArea1.innerHTML = response[0]['text'];
-            console.log(response);
         }
     }
     xhr.send();
 }
 
-getContentFromUrl('https://6512d478b8c6ce52b3965089.mockapi.io/api/v1/self-intro', 'area1');
+if(parseInt(window.localStorage.getItem('current-selected-item-offset')) == 0) {
+    getContentFromUrl('https://6512d478b8c6ce52b3965089.mockapi.io/api/v1/self-intro', 'area1');
+}

@@ -1,0 +1,34 @@
+.game-container {
+    width: 40rem;
+    height: 27rem;
+    margin: 5rem;
+    flex-direction: column;
+}
+    .game-window-container {
+        background-color: #222222;
+        width: 100%;
+        height: 22.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+        margin: 0;
+    }
+        .game-window {
+            background-color: white;
+            /*backdrop-filter: brightness(3);*/
+            width: calc(100% - 2.5rem);
+            height: calc(100% - 2.5rem);
+        }
+    .game-button-container {
+        width: 100%;
+        height: 4.5rem;
+        margin: 0;
+    }
+        .game-button {
+            width: 7rem;
+            height: 2.5rem;
+            margin: 1.5rem;
+        }
+            #start-btn {
+                width: 17rem;
+            }
+    

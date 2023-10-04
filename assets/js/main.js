@@ -44,7 +44,7 @@ function logout() {
 
 // executing part
 
-loadComponents(['input', 'link', 'popup-window', 'press-button', 'navigator', 'swiper', 'reading-area']);
+loadComponents(['input', 'link', 'popup-window', 'press-button', 'navigator', 'swiper', 'reading-area', 'game']);
 
 var headShot = Array.from(document.getElementsByClassName('top-navigator-user'))[0];
 var isUserInfoShowRecently = false;
@@ -61,3 +61,4 @@ function userInfoHandler() {
 }
 
 headShot.addEventListener('mouseenter', userInfoHandler);
+

@@ -36,8 +36,8 @@
         <!--
             sidebar让对应的note自己添加，note向mockapi申请
         -->
-        <div class="main-content-container">
-            <div class="main-content">
+        <div class="main-content-container" id="items-container">
+            <div class="main-content" id="item-0-content">
                 <div class="main-content-part1 component-swiper-container">
                     <div class="main-content-swiper component-swiper">
                         <div class="swiper-image" id="top-img"></div>
@@ -52,111 +52,18 @@
                     <div class="swiper-dot-container" id="swiper-dot-container"></div>
                 </div>
                 <div class="main-content-part2 component-reading-area-container">
-                    <div class="reading-area component-reading-area" id="area1">
-                        <!--
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字<br/>
-                        这一行有三十九个字，这一行有三十九个字，这一行有三十九个字，这一行有三十九个字
-                        -->
-                        <!--
-                        <h1 class='reading-area-h1'>自我介绍</h1>
-                        <p class='reading-area-p'>
-                            我叫陈禹良，是电子科技大学信息与软件工程学院软件工程专业嵌入式方向2021级本科生，具有广泛的兴趣爱好与强烈的探索欲望，梦想成为一名研究员。前端是一个拥有数十万从业人员的大领域，无数青年才俊的热情与技术大牛的智慧交汇于此处，促动了大量新设计、新思维、新方法、新工具的涌现。
-                        </p>
-                        <p class='reading-area-p'>
-                            长江后浪催前浪，一代新人换旧人。正如招新文档中的文章所说，前端的立锥之地是无数先辈穷竭智虑从上下游各领域中争夺而来的。作为新时代的前端开发者，我认为应该继承并发扬这一“夺食精神”，不断自我革新，开辟新业务、新方向、新征程，为前端领域带来新的生命力。然而，自我革新并非易事，需要同时掌握多个领域的知识与技能。
-                        </p>
-                        <p class='reading-area-p'>
-                            我在以下方面具有一定能力：
-                            <ul class='reading-area-ul'>
-                                <li class='reading-area-li'>♢ C++算法设计</li>
-                                <li class='reading-area-li'>♢ 嵌入式C编程</li>
-                                <li class='reading-area-li'>♢ Java后端编程</li>
-                                <li class='reading-area-li'>♢ 传统C编程</li>
-                                <li class='reading-area-li'>♢ SQL编程</li>
-                                <li class='reading-area-li'>♢ shell编程</li>
-                                <li class='reading-area-li'>♢ Python爬虫</li>
-                                <li class='reading-area-li'>♢ 写作</li>
-                                <li class='reading-area-li'>♢ 英语</li>
-                                <li class='reading-area-li'>♢ 数学</li>
-                            </ul>
-                        </p>
-                        <p class='reading-area-p'>
-                            我在以下方面有所涉猎：
-                            <ul class='reading-area-ul'>
-                                <li class='reading-area-li'>♢ 机器学习</li>
-                                <li class='reading-area-li'>♢ 原生前端编程</li>
-                                <li class='reading-area-li'>♢ 低速PCB设计</li>
-                                <li class='reading-area-li'>♢ 服务器维护</li>
-                                <li class='reading-area-li'>♢ 法语</li>
-                            </ul>
-                        </p>
-                        <p class='reading-area-p'>
-                            我参加过以下项目：
-                            <ul class='reading-area-ul'>
-                                <li class='reading-area-li'>♢ 医献智检系统（负责后端和服务器，获14届服创大赛国家级三等奖）</li>
-                                <li class='reading-area-li'>♢ 四轴飞行器设计（负责硬件驱动、OS移植、PCB设计和理论研究，进行中）</li>
-                                <li class='reading-area-li'>♢ 矩阵计算器（负责总体设计、特征值计算和求逆，PBLF课程得到97分）</li>
-                            </ul>
-                        </p>
-                        <p class='reading-area-p'>
-                            我参加过以下竞赛：
-                            <ul class='reading-area-ul'>
-                                <li class='reading-area-li'>♢ 蓝桥杯（获国家级三等奖）</li>
-                                <li class='reading-area-li'>♢ 大学生数学竞赛（获预赛二等奖）</li>
-                                <li class='reading-area-li'>♢ 大学生英语竞赛（获国家级三等奖）</li>
-                                <li class='reading-area-li'>♢ 21届ACM校赛（所在队伍获第7名）</li>
-                                <li class='reading-area-li'>♢ 服创大赛（获国家级三等奖）</li>
-                            </ul>
-                        </p>
-                        <p class='reading-area-p'>
-                            编程是一生的事业，每个程序员都应具备终生学习的能力。希望来日能有幸与诸君携手共进，共同谱写星辰新的篇章。
-                        </p>
-                        <p class='reading-area-p' id='inscription'>
-                            2023年10月3日
-                        </p>-->
-                    </div>
+                    <div class="reading-area component-reading-area" id="area1"></div>
+                </div>
+            </div>
+            <div class="game-container" id="item-1-content">
+                <div class="game-window-container">
+                    <canvas class="game-window" id="game-window"></canvas>
+                </div>
+                <div class="game-button-container">
+                    <button class="game-button component-press-button" id="start-btn">开始游戏</button>
+                    <button class="game-button component-press-button" id="stop-btn">暂停游戏</button>
+                    <button class="game-button component-press-button" id="resume-btn">继续游戏</button>
+                    <button class="game-button component-press-button" id="end-btn">结束游戏</button>
                 </div>
             </div>
         </div>

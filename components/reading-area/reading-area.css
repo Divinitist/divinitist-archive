@@ -6,8 +6,8 @@
 
 .component-reading-area {
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 5vw;
-    font-size: 1.2vw;
+    padding: 5rem;
+    font-size: 1.2rem;
     width: calc(1.2vw * 39);
     flex-direction: column;
     flex-wrap: wrap;

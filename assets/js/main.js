@@ -2,7 +2,6 @@ function showUserInfo() {
     var userInfoPanelContainer = document.createElement('div');
     userInfoPanelContainer.classList.add('top-navigator-user-panel-container');
     userInfoPanelContainer.classList.add('component-navigator-user-panel-container');
-    userInfoPanelContainer.onmouseleave = hideUserInfo;
     body.appendChild(userInfoPanelContainer);
 
     var userInfoPanel = document.createElement('div');
@@ -27,7 +26,7 @@ function showUserInfo() {
 }
 
 function hideUserInfo() {
-    var userInfoPanel = this.firstChild;
+    var userInfoPanel = Array.from(document.getElementsByClassName('component-navigator-user-panel'))[0];
     if(userInfoPanel.classList.contains('removed') == false){
         userInfoPanel.classList.add('removed'); // 用添加className与transition配合使用
         userInfoPanel.addEventListener('transitionend', function() {
@@ -44,21 +43,29 @@ function logout() {
 
 // executing part
 
-loadComponents(['input', 'link', 'popup-window', 'press-button', 'navigator', 'swiper', 'reading-area', 'game']);
+loadComponents(['input', 'link', 'popup-window', 'press-button', 'navigator', 'swiper', 'reading-area', 'game', 'note']);
 
 var headShot = Array.from(document.getElementsByClassName('top-navigator-user'))[0];
-var isUserInfoShowRecently = false;
+var isUserInfoShown = false;
+var isHeadShotClickEnabled = true;
 
 function userInfoHandler() {
-    if(isUserInfoShowRecently == true){
+    if(isHeadShotClickEnabled == false) {
         return;
     }
-    showUserInfo();
-    isUserInfoShowRecently = true;
+    if(isUserInfoShown == false) {
+        showUserInfo();
+        isUserInfoShown = true;
+    }
+    else {
+        hideUserInfo();
+        isUserInfoShown = false;
+    }
+    isHeadShotClickEnabled = false;
     setTimeout(() => {
-        isUserInfoShowRecently = false;
-    }, 500);
+        isHeadShotClickEnabled = true;
+    }, 200);
 }
 
-headShot.addEventListener('mouseenter', userInfoHandler);
+headShot.addEventListener('click', userInfoHandler);
 

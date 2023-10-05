@@ -10,7 +10,3 @@ function getContentFromUrl(url, areaName) {
     }
     xhr.send();
 }
-
-if(parseInt(window.localStorage.getItem('current-selected-item-offset')) == 0) {
-    getContentFromUrl('https://6512d478b8c6ce52b3965089.mockapi.io/api/v1/self-intro', 'area1');
-}

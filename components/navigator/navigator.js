@@ -48,7 +48,6 @@ for(const i in items) {
     });
 }
 
-window.addEventListener('load', function() {
-    items[parseInt(window.localStorage.getItem('current-selected-item-offset'))].dispatchEvent(new Event('click'));
-    // onclick和eventlistner是两个体系！
-})
+items[0].addEventListener('click', function() {
+    getContentFromUrl('https://6512d478b8c6ce52b3965089.mockapi.io/api/v1/self-intro', 'area1');
+});

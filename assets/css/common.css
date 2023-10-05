@@ -18,8 +18,14 @@ head, script {
     0%{
         background-position: bottom left;
     }
-    100%{
+
+    50% {
         background-position: 50% 100%;
+
+    }
+
+    100%{
+        background-position: bottom left;
     }
 }
 
@@ -45,6 +51,6 @@ body {
     background-size: 250%;
     background-position: bottom left;
     background-attachment: fixed;
-    animation: sky-move-right 250s normal infinite;
+    animation: sky-move-right 500s normal infinite;
     /*filter: saturate(75%);*/
 }

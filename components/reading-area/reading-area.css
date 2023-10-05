@@ -6,9 +6,9 @@
 
 .component-reading-area {
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 5rem;
-    font-size: 1.2rem;
-    width: calc(1.2vw * 39);
+    padding: 3rem;
+    font-size: calc(0.8rem + 0.3vw);
+    width: calc(calc(0.8rem + 0.3vw) * 39);
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -22,10 +22,19 @@
     padding: 0;
 }
 
+ul + p {
+    display: none;
+}
+
 .reading-area-h1 {
     text-align: center;
     margin: 0.3em;
     padding: 0;
+}
+
+.reading-area-sub-title {
+    text-indent: 0;
+    font-weight: bold;
 }
 
 .reading-area-ul {

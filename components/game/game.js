@@ -102,6 +102,7 @@ function clearBall(x, y, r) {
     // 额外加一个像素才能完全擦掉之前的球？
     ctx.closePath();
     ctx.fill();
+    showScore();
     placeBricks();
     ctx.fillRect(boardX, boardY, brickWidth, margin);
 }
@@ -154,7 +155,7 @@ function placeBoard(x) {
     boardPID = setInterval(() => {
         if(mouseX < boardX + brickWidth / 2 - boardVelocity * 0.01) {
             var newBoardX = boardX - boardVelocity * 0.01;
-            if(newBoardX < margin) {
+            if(newBoardX < margin / 2) {
                 return;
             }
             ctx.clearRect(boardX - 1, canvasHeight - 2 * margin - 1, brickWidth + 2, margin + 2);
@@ -164,7 +165,7 @@ function placeBoard(x) {
         }
         else if(mouseX > boardX + brickWidth / 2 + boardVelocity * 0.01) {
             var newBoardX = boardX + boardVelocity * 0.01;
-            if(newBoardX + brickWidth > canvasWidth - margin){
+            if(newBoardX + brickWidth > canvasWidth - margin / 2){
                 return;
             }
             ctx.clearRect(boardX - 1, canvasHeight - 2 * margin - 1, brickWidth + 2, margin + 2);
@@ -274,7 +275,7 @@ function placeBall(x, y, r, vx, vy) {
         if(yReverse == true){
             velocityY *= -1;
         }
-
+        gameScore = brickCounter;
         if(brickCounter == brickCol * brickRow) {
             clearInterval(gamePID);
             clearInterval(boardPID);
@@ -295,6 +296,15 @@ window.addEventListener('mousemove', function(event) {
 placeButtonsByGameStatus(GameStatus.NotStart);
 showTip('Welcome', 200);
 
+var gameScore = 2;
+
+function showScore() {
+    var fontSize = 18;
+    ctx.clearRect(canvasWidth - extMargin - 4 * fontSize, margin, 4 * fontSize + 2, fontSize + margin);
+    ctx.fillStyle = themeColor;
+    ctx.font = `${fontSize}px consolas,华文中宋`;
+    ctx.fillText(`得分：${gameScore}`, canvasWidth - extMargin - 4 * fontSize, margin + fontSize);
+}
 
 startBtn.addEventListener('click', function() {
     for(let i = 0; i < brickCol; ++i) {
@@ -304,6 +314,7 @@ startBtn.addEventListener('click', function() {
     }
     startBtn.disabled = true;
     startBtn.style.display = 'none';
+    gameScore = 0;
     showTip('3', 30);
     setTimeout(() => {
         showTip('2', 30);
@@ -319,6 +330,7 @@ startBtn.addEventListener('click', function() {
     
     setTimeout(() => {
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        showScore();
         placeBricks();
 
         var vx = (Math.random() - 0.5) * 400 * Math.sqrt(2);

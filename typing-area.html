@@ -1,1 +1,110 @@
-<h1 class='reading-area-h1'>自我介绍</h1><p class='reading-area-p'>我叫陈禹良，是电子科技大学信息与软件工程学院软件工程专业嵌入式方向2021级本科生，具有广泛的兴趣爱好与强烈的探索欲望，梦想成为一名研究员。前端是一个拥有数十万从业人员的大领域，无数青年才俊的热情与技术大牛的智慧交汇于此处，促动了大量新设计、新思维、新方法、新工具的涌现。</p><p class='reading-area-p'>长江后浪催前浪，一代新人换旧人。正如招新文档中的文章所说，前端的立锥之地是无数先辈穷竭智虑从上下游各领域中争夺而来的。作为新时代的前端开发者，我认为应该继承并发扬这一“夺食精神”，不断自我革新，开辟新业务、新方向、新征程，为前端领域带来新的生命力。然而，自我革新并非易事，需要同时掌握多个领域的知识与技能。</p><p class='reading-area-p'>我在以下方面具有一定能力：<ul class='reading-area-ul'><li class='reading-area-li'>♢ C++算法设计</li><li class='reading-area-li'>♢ 嵌入式C编程</li><li class='reading-area-li'>♢ Java后端编程</li><li class='reading-area-li'>♢ 传统C编程</li><li class='reading-area-li'>♢ SQL编程</li><li class='reading-area-li'>♢ shell编程</li><li class='reading-area-li'>♢ Python爬虫</li><li class='reading-area-li'>♢ 写作</li><li class='reading-area-li'>♢ 英语</li><li class='reading-area-li'>♢ 数学</li></ul></p><p class='reading-area-p'>我在以下方面有所涉猎：<ul class='reading-area-ul'><li class='reading-area-li'>♢ 机器学习</li><li class='reading-area-li'>♢ 原生前端编程</li><li class='reading-area-li'>♢ 低速PCB设计</li><li class='reading-area-li'>♢ 服务器维护</li><li class='reading-area-li'>♢ 法语</li></ul></p><p class='reading-area-p'>我参加过以下项目：<ul class='reading-area-ul'><li class='reading-area-li'>♢ 医献智检系统（负责后端和服务器，获14届服创大赛国家级三等奖）</li><li class='reading-area-li'>♢ 四轴飞行器设计（负责硬件驱动、OS移植、PCB设计和理论研究，进行中）</li><li class='reading-area-li'>♢ 矩阵计算器（负责总体设计、特征值计算和求逆，PBLF课程得到97分）</li></ul></p><p class='reading-area-p'>我参加过以下竞赛：<ul class='reading-area-ul'><li class='reading-area-li'>♢ 蓝桥杯（获国家级三等奖）</li><li class='reading-area-li'>♢ 大学生数学竞赛（获预赛二等奖）</li><li class='reading-area-li'>♢ 大学生英语竞赛（获国家级三等奖）</li><li class='reading-area-li'>♢ 21届ACM校赛（所在队伍获第7名）</li><li class='reading-area-li'>♢ 服创大赛（获国家级三等奖）</li></ul></p><p class='reading-area-p'>编程是一生的事业，每个程序员都应具备终生学习的能力。希望来日能有幸与诸君携手共进，共同谱写星辰新的篇章。</p><p class='reading-area-p' id='inscription'>2023年10月3日</p>
+<h1 class='reading-area-h1'>2023星辰前端招新题作答</h1>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>1. CSS有众多的选择器，什么时候应该用怎样的选择器才能让代码更加简洁？</span></p>\
+<p class='reading-area-p'>\
+根据该项目经验，我总结出以下原则：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 为提高代码复用性，应优先使用类选择器而非id选择器。然而这并不代表元素不需要id，为方便JS代码中元素的捕获，应为需要捕获的元素添加id。在JS中也片面依赖类，是我所犯的一个错误，致使我不得不用Array.from(document.getElementsByClassName('class-name'))[0]来查找该类唯一一个元素</li>\
+<li class='reading-area-li'>2. 为降低代码互干性，应避免使用元素选择器。虽然元素选择器的优先级并不高，可以作为默认方案，但是出于规范考虑只应该统一写在common.JS中，而不应该在其他CSS文件中出现，否则可能出现由于CSS文件加载顺序问题而导致的渲染不符合预期的情况。</li>\
+<li class='reading-area-li'>3. 为提高代码可读性，不应使用长元素选择器链，而应使用类选择器-元素选择器链。长链的阅读难度是显然的。由于我几乎没有使用元素选择器，所以这一点只是从教程中看到的。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>2. 有哪些元素居中方法，他们分别适用于怎样的场景？</span></p>\
+<p class='reading-area-p'>\
+根据该项目经验，我总结出如下方法：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 令父元素布局为flex，再视情况选择居中方式：若flex-direction为row，则align-items: center为垂直居中，justify-content: center为水平居中；若flex-direction为column，则相反。</li>\
+<li class='reading-area-li'>2. 使用绝对定位和负边距。这种对齐方式适用于几何居中而视觉上不居中，需要微调位置的情况，尤其是在无法选择布局方式的位置，例如canvas画布上。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>3. CSS有哪些方法可以进行网页布局，请举例说明？</span></p>\
+<p class='reading-area-p'>\
+在该项目中，我使用了如下方法：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. flex布局，将页面元素弹性划分，以实现响应式布局。</li>\
+<li class='reading-area-li'>2. 流式布局，大多使用相对单位，以实现跟随窗口缩放。</li>\
+<li class='reading-area-li'>3. 盒模型和网格布局由于响应式布局与题材原因没有涉及。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>4. 为什么要对不同分辨率手机进行适配？常见的适配方案有哪些？</span></p>\
+<p class='reading-area-p'>\
+不同分辨率的手机具有不同的屏幕尺寸和像素密度，因而网页在不同设备上呈现的布局和显示效果可能会不一致。为提供更好的用户体验，需要根据设备分辨率进行适配。常见的适配方案包括：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 响应式布局，通过媒体查询和流式布局实现根据设备尺寸调整布局和样式。本项目未做移动端适配，但做了对窗口尺寸变化的适配。</li>\
+<li class='reading-area-li'>2. 视口设置，通过设置meta的viewport属性以控制网页在移动设备上的显示方式。本项目未使用此方法，颇为遗憾。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>5. JavaScript有哪些数据类型，与其他语言不同的地方在哪里？</span></p>\
+<p class='reading-area-p'>\
+考虑到这一部分内容所涉甚广，为保证答案的全面性，此处部分引用了ChatGPT的生成结果。\
+</p>\
+<p class='reading-area-p'>\
+JavaScript有以下数据类型：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 基本数据类型，包括数字、字符串、布尔值、空值和未定义值。</li>\
+<li class='reading-area-li'>2. 复杂数据类型，包括对象、数组和函数。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'>\
+与其他语言相比，JavaScript有以下特性：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 动态类型：变量的数据类型可以在运行时根据赋值来自动确定，并且可以随时改变。这使得JavaScript具有更大的灵活性，但也增加了类型相关的错误的风险。</li>\
+<li class='reading-area-li'>2. 弱类型：允许在不进行显式类型转换的情况下进行混合数据类型的操作，但也增加了一些类型相关的隐患和调试困难。</li>\
+<li class='reading-area-li'>3. 对象字面量表示法：允许使用对象字面量表示法来创建对象，可以直接在代码中定义对象的属性和值，而无需像其他语言那样使用类或构造函数。</li>\
+<li class='reading-area-li'>4. 原型继承：使用原型继承来实现对象之间的继承关系，而不是像其他语言那样使用类。通过原型链，一个对象可以继承另一个对象的属性和方法。</li>\
+<li class='reading-area-li'>5. 函数优先：将函数视为“一等公民”，函数可以像其他数据类型一样被赋值给变量、作为参数传递给其他函数，甚至可以作为函数的返回值。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>6. 有哪些判断数据类型的方法，他们的优缺点是什么？</span></p>\
+<p class='reading-area-p'>\
+考虑到这一部分内容所涉甚广，为保证答案的全面性，此处部分引用了ChatGPT的生成结果。\
+</p>\
+<p class='reading-area-p'>\
+在JavaScript中，有以下判断数据类型的方法：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. typeof，可快速判断基本类型，但难以区分复杂数据类型。</li>\
+<li class='reading-area-li'>2. instanceof，仅可用于判断是否属于特定构造函数或类的实例。</li>\
+<li class='reading-area-li'>3. Object.prototype.toString.call()，可判断所有类型，但使用繁琐且需要注意上下文。</li>\
+<li class='reading-area-li'>4. Array.isArray()，只能判断是否为数组。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>7. 和CSS相比，使用DOM操作对元素进行样式修饰有什么优缺点，你更喜欢哪个？</span></p>\
+<p class='reading-area-p'>\
+根据本项目经验，DOM修饰的优点包括：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 动态性：可根据具体条件与事件即时修改样式。</li>\
+<li class='reading-area-li'>2. 彻底性：DOM不仅可以修饰元素，还可以将某个元素从html中移除。</li>\
+<li class='reading-area-li'>3. 精准性：可对已加载完毕的特定元素进行修改，对最终呈现给用户的效果产生直接影响。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'>\
+缺点包括：\
+<ul class='reading-area-ul'>\
+<li class='reading-area-li'>1. 复杂性：实现相同修饰所需的代码比CSS复杂和冗长很多。</li>\
+<li class='reading-area-li'>2. 性能影响：JS实现修饰比CSS实现修饰的算力消耗更大。</li>\
+<li class='reading-area-li'>3. 维护困难：JS修饰的耦合性高，影响代码复用性，并使代码结构变得混乱。</li>\
+</ul>\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>8. 接触了 JavaScript 操作 DOM 样式之后，有引发你关于 CSS 的思考吗？</span></p>\
+<p class='reading-area-p'>\
+CSS与JS应相互配合，CSS完成大部分元素的静态渲染，JS完成小部分元素的动态渲染。前者统一渲染算力消耗小，应作为主要修饰手段；后者精确渲染算力消耗大，应作为辅助修饰手段。\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>9. 当父元素和子元素都绑定了事件，点击子元素的时候，哪一个事件会先发生？</span></p>\
+<p class='reading-area-p'>\
+在事件冒泡机制下，子元素所绑定的事件会先发生，然后父元素所绑定的事件会发生。\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>10. JS是单线程工作的，为何在我们与浏览器进行交互的过程中，网页可以同时进行一系列数据处理工作？</span></p>\
+<p class='reading-area-p'>\
+JS的定时器、网络请求、事件处理等都可使用回调函数进行异步处理。当操作执行时，JS引擎会将对应回调函数添加到队列。一旦主函数空闲，它就会开始按条件执行回调函数，实现异步任务处理。\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>11. 通过编写.ignore文件，我们可以忽略掉部分文件（文件夹），假设现在有一个已经追踪的文件，将其添加到.ignore列表中，会发生什么？</span></p>\
+<p class='reading-area-p'>\
+它仍会被Git继续追踪。\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>12. 发现一次提交漏掉了一些文件，或者 commit 内容写错了，最好怎么做？</span></p>\
+<p class='reading-area-p'>\
+对于漏掉一些文件的情况，可使用git add ${file}命令将漏掉的文件添加到暂存区，然后使用git commit --amend修改最近的一次提交；如果只是写错commit内容，只需使用git commit --amend修改提交信息。\
+</p>\
+<p class='reading-area-p'><span class='reading-area-sub-title'>13. 生产时较少使用 reset，你认为会是什么原因呢？</span></p>\
+<p class='reading-area-p'>\
+git reset会回退到上一个版本，这本身违背了代码管理的理念，即记录编程周期内代码的所有变更。这一回退可能会导致其他成员提交的代码被删除，还会导致代码变更的可追溯性降低，后续事故责任人难以认定。\
+</p>

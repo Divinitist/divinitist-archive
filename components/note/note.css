@@ -1,0 +1,86 @@
+.note-container {
+    flex-direction: column;
+    /*border: 1px solid black;*/
+    width: min(calc(80%), 50rem);
+    height: auto;
+    position: absolute;
+    top: 4.2rem;
+}
+
+.note-list-title-container {
+    /*border: 1px solid green;*/
+    width: calc(100% - 2rem);
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.note-list-title {
+    /*border: 1px solid blue;*/
+    font-size: 1.7rem;
+    color: var(--main-text-color);
+    margin-left: 0.3rem;
+}
+
+.note-list-bar {
+    /*border: 1px solid red;*/
+    border-radius: 0.5rem;
+    width: calc(100% - 2rem);
+    height: 3rem;
+    margin: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.note-list-bar:hover {
+    transform: scale(1.05);
+}
+
+.note-title-container {
+    /*border: 1px solid red;*/
+    width: 70%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.note-title {
+    display: block;
+    /*border: 1px solid green;*/
+    font-size: 1rem;
+    color: var(--main-text-color);
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 1rem;
+}
+
+.note-date-container {
+    /*border: 1px solid red;*/
+    width: 30%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.note-date {
+    /*border: 1px solid green;*/
+    font-size: 0.8rem;
+    color: #606266;
+    width: auto;
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+.note-button {
+    width: auto;
+    height: auto;
+    padding: 0.7rem;
+}
+
+.note-reading-area-container {
+    top: 5rem;
+}

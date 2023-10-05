@@ -81,12 +81,11 @@
 
 .component-navigator-user-panel-container {
     flex-direction: column;
-
     width: 15rem;
-    height: 12rem;
+    height: 7rem;
     position: absolute;
     right: calc(22vw - 50px);
-    top: 0;
+    top: 5rem;
     z-index: 999;
 }
 
